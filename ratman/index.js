@@ -1,4 +1,4 @@
-ws = new WebSocket('ws://localhost:3001')
+ws = new WebSocket('ws://webgamesuseast.onrender.com')
 
 //#region Setup
 
@@ -134,7 +134,7 @@ const updateTable = () => {
 
 
 
-    //check for gameover
+    //check for gameover //-shown twice
     if (ratsLeft === 0 && ratsRight === 0) {
         alert('DRAW')
         console.error('draw')
