@@ -197,7 +197,7 @@ const enableInput = () => {
 
                 document.getElementById(`${matrix.length}-${j}`).className = 'inputup'
                 document.getElementById(`${matrix.length}-${j}`).onclick = () => input(j, true)
-                document.getElementById(`${matrix.length + 1}-${j}`).className = 'inputdown'i
+                document.getElementById(`${matrix.length + 1}-${j}`).className = 'inputdown'
                 document.getElementById(`${matrix.length + 1}-${j}`).onclick = () => input(j, false)
                 break
             }
