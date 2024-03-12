@@ -2,28 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Rats game</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="./index.js"> </script>
+  <meta charset="UTF-8">
+  <title>Rats game</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="./index.js"> </script>
 </head>
 
 <body>
-    <form onsubmit="return false" id="nameSelection">
-        <label for="playerName">Player Name:</label>
-        <input type="text" name="playerName" id="playerName" required>
-        <br>
-        <button onclick="nameSelection()">Confirm Name</button>
-    </form>
+  <form onsubmit="return false" id="nameSelection">
+    <label for="playerName">Player Name:</label>
+    <input type="text" name="playerName" id="playerName" required>
+    <br>
+    <button onclick="nameSelection()">Confirm Name</button>
+  </form>
 
-    <p id="waiting"></p>
+  <p id="waiting"></p>
 
-    <br><br>
+  <br><br>
 
-    <p id="scoreLeft">score Left:</p>
-    <p id="scoreRight">score Right:</p>
+  <label for="tickRate">animation tickrate</label>
+  <input type="number" id="tickRate" min="50" max="1000" value="100" step="50">
 
-    <table id="game"></table>
+  <br><br>
+
+  <p id="scoreMe">my name goes here:</p>
+  <p id="scoreOther">other name goes here:</p>
+
+  <table id="game"></table>
 </body>
 
 </html>
