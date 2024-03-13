@@ -110,7 +110,7 @@ const update = (_matrix, _turn, _left) => {
   turn = _turn
 
   matrix = _matrix
-  console.log(matrix)
+  console.log('update', matrix)
 
 
   clearInterval(tickInterval)
@@ -120,7 +120,7 @@ const update = (_matrix, _turn, _left) => {
 
 
 
-
+//returns positio of winning player, or nothing if not gameover
 const updateTable = () => {
   ratsLeft = 0
   ratsRight = 0
@@ -139,24 +139,20 @@ const updateTable = () => {
   }
 
 
-
-  //check for gameover //-shown twice
-  if (ratsLeft === 0 && ratsRight === 0) {
-    alert('DRAW')
-    console.error('draw')
-  }
-  else if (ratsLeft === 0) {
-    alert('LEFT WINS')
-    console.error('left')
-  }
-  else if (ratsRight === 0) {
-    alert('RIGHT WINS')
-    console.error('right')
-  }
-
-
   document.getElementById('scoreMe').innerHTML = `${playerName}: ${startingRats - (isLeft ? ratsLeft : ratsRight)}`
   document.getElementById('scoreOther').innerHTML = `other: ${startingRats - (isLeft ? ratsRight : ratsLeft)}`
+
+  //check for gameover
+
+  if (ratsLeft === 0 && ratsRight === 0) {
+    return 'draw'
+  }
+  else if (ratsLeft === 0) {
+    return 'left'
+  }
+  else if (ratsRight === 0) {
+    return 'right'
+  }
 }
 
 
@@ -177,8 +173,26 @@ const tick = () => {
       if (turn === playerName)
         enableInput()
     }
-    movementFlag = movementTick()
-    updateTable()
+
+    movementFlag = movementTick()//-maybe swap this and bottom?
+
+    const winner = updateTable()
+    if (winner) {
+      clearInterval(tickInterval)
+      console.log(`Stopped loop`)
+      ticking = false
+
+      let msg = ''
+      if (winner === 'draw')
+        msg = 'It is a draw'
+      else if (winner === 'left')
+        msg = 'left wins'//-
+      else
+        msg = 'right wins'
+
+      alert(msg)
+      //---notifiy backend of victory
+    }
   }, document.getElementById('tickRate').value)//tick interval
 
 
