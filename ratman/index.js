@@ -34,7 +34,7 @@ ws.onmessage = data => {
 
     case 'update':
       if (!matrix) {//game not started yet, init to start now
-        init(parsedData.matrix, parsedData.left)
+        init(parsedData.matrix, parsedData.left, parsedData.turn)
         document.getElementById('waiting').remove()//waiting for player text
       }
 
@@ -61,6 +61,7 @@ const name_validation = _playerName => {
 
 
 let playerName
+let playerName2
 let matrix
 let turn//name of player's turn
 let isLeft//am i the left player
@@ -70,8 +71,9 @@ let scoreRight = 0
 let tickRate = 50
 
 
-const init = (_matrix, _left) => {
-  isLeft = isLeft ?? _left === playerName
+const init = (_matrix, _left, _turn) => {
+  isLeft = _left === playerName
+  playerName2 = isLeft ? _turn : _left
 
   const table = document.getElementById("game")
 
@@ -140,7 +142,7 @@ const updateTable = () => {
 
 
   document.getElementById('scoreMe').innerHTML = `${playerName}: ${startingRats - (isLeft ? ratsLeft : ratsRight)}`
-  document.getElementById('scoreOther').innerHTML = `other: ${startingRats - (isLeft ? ratsRight : ratsLeft)}`
+  document.getElementById('scoreOther').innerHTML = `${playerName2}: ${startingRats - (isLeft ? ratsRight : ratsLeft)}`
 
   //check for gameover
 
@@ -186,11 +188,12 @@ const tick = () => {
       if (winner === 'draw')
         msg = 'It is a draw'
       else if (winner === 'left')
-        msg = 'left wins'//-
+        msg = `${isLeft ? playerName : playerName2} wins`
       else
-        msg = 'right wins'
+        msg = `${isLeft ? playerName2 : playerName} wins`
 
       alert(msg)
+      ws.send(JSON.stringify({ type: 'rats_event', winner: true }))
       //---notifiy backend of victory
     }
   }, document.getElementById('tickRate').value)//tick interval
@@ -263,7 +266,7 @@ const input = (columnIndex, isUpArrow) => {
 
 
   //send new matrix to the server, total client authority, 100% vulnerable
-  ws.send(JSON.stringify({ type: 'rats_event', action: 'userinput', matrix }))
+  ws.send(JSON.stringify({ type: 'rats_event', matrix }))
 }
 
 
