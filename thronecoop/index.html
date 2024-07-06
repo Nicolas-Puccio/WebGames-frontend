@@ -2,17 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Throne Coop Versions</title>
+  <meta charset="UTF-8">
+  <title>Throne Coop Versions</title>
 </head>
 
 <body>
-    <h1>Throne Coop Versions</h1>
-    <a href="/WebGames-frontend/thronecoop/0.01/index.html">0.01, Sunday, June 30</a>
-    <br><br>
-    <a href="/WebGames-frontend/thronecoop/0.02/index.html">0.02, Sunday, July 7</a>
-    <br><br>
-    <!-- Add more versions as needed -->
+  <h1>Throne Coop Versions</h1>
+  <a href="/WebGames-frontend/thronecoop/0.01/index.html">0.01, Sunday, June 30</a>
+  <br><br>
+  <a href="/WebGames-frontend/thronecoop/0.02/index.html">0.02, Sunday, July 7</a>
+  <br><br>
+  <!-- Add more versions as needed -->
+
+
+  <h2>Thronecoop Changelog</h2>
+
+  <h3>Sunday, June 30</h3>
+  <h4>Enemy AI</h4>
+  <ul>
+    <li>Spawns with town center as a target.</li>
+    <li>Will follow player if they enter trigger.</li>
+    <li>Follows town center again if player is far away.</li>
+  </ul>
+
+  <h4>Buildings</h4>
+  <ul>
+    <li>Have a level and arrays for the town center level requirement and the upgrade cost.</li>
+    <li>Trigger collision to detect player nearby.</li>
+  </ul>
+
+  <h4>Game Manager</h4>
+  <ul>
+    <li>Key to restart level.</li>
+  </ul>
+
+  <h4>Player Script</h4>
+  <ul>
+    <li>WASD movement.</li>
+    <li>Space interacts with building.</li>
+    <li>Holds coins and displays them on UI.</li>
+  </ul>
+
+  <h4>Wave Manager</h4>
+  <ul>
+    <li>Infinitely spawns enemies at a hardcoded position every X seconds.</li>
+  </ul>
+
+  <h3>Sunday, July 7</h3>
+  <h4>Map</h4>
+  <ul>
+    <li>Bigger map plane.</li>
+    <li>Add more buildings.</li>
+  </ul>
+
+  <h4>Buildings</h4>
+  <ul>
+    <li>Keep a list of nearby enemies.</li>
+    <li>Shoot at the first enemy to enter range.</li>
+    <li>Buildings can be discovered after building another one.</li>
+  </ul>
+
+  <h4>Arrows</h4>
+  <ul>
+    <li>Arrow behavior (somewhat broken).</li>
+  </ul>
+
+  <h4>Town Center</h4>
+  <ul>
+    <li>Shoots Arrows.</li>
+  </ul>
+
+  <h4>Towers</h4>
+  <ul>
+    <li>Added towers that can shoot.</li>
+  </ul>
 </body>
 
 </html>
