@@ -29,6 +29,22 @@
   <p id="scoreOther">other name goes here:</p>
 
   <table id="game"></table>
+
+
+  <script>
+    console.log("trying to wake up")
+    fetch('https://webgamesuswest.onrender.com')
+      .then(response => {
+        if (response.ok) {
+          console.log('Server is awake')
+        } else {
+          console.error('Failed to wake up server')
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error)
+      });
+  </script>
 </body>
 
 </html>

@@ -2,23 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>WebSocket Games</title>
+  <meta charset="UTF-8">
+  <title>WebSocket Games</title>
 </head>
 
 <body>
-    <a href="/WebGames-frontend/ratman/index.html">remake of an old 2-players game using plain JS</a>
-    <p>play with mouse</p>
+  <a href="/WebGames-frontend/ratman/index.html">remake of an old 2-players game using plain JS</a>
+  <p>play with mouse</p>
 
-    <br> <br>
+  <br> <br>
 
-    <a href="/WebGames-frontend/unityshooter/index.html">topdown zombie wave shooter</a>
-    <p>play with mouse and WASD keys</p>
+  <a href="/WebGames-frontend/unityshooter/index.html">topdown zombie wave shooter</a>
+  <p>play with mouse and WASD keys</p>
 
-    <br> <br>
+  <br> <br>
 
-    <a href="/WebGames-frontend/thronecoop/index.html">game similar to Thronefall, eventually will be made multiplayer</a>
-    <p>play with WASD keys and Space</p>
+  <a href="/WebGames-frontend/thronecoop/index.html">game similar to Thronefall, eventually will be made multiplayer</a>
+  <p>play with WASD keys and Space</p>
+
+  <script>
+    console.log("trying to wake up")
+    fetch('https://webgamesuswest.onrender.com')
+      .then(response => {
+        if (response.ok) {
+          console.log('Server is awake')
+        } else {
+          console.error('Failed to wake up server')
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error)
+      });
+  </script>
 </body>
 
 </html>
