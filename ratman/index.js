@@ -7,7 +7,12 @@ ws = new WebSocket('wss://webgamesuswest.onrender.com')
 const nameSelection = () => {
   const playerName = document.getElementById("playerName").value
   setFormDisabled(true)
-  ws.send(JSON.stringify({ type: 'name_selection', playerName }))
+  try {
+    ws.send(JSON.stringify({ type: 'name_selection', playerName }))
+  } catch (error) {
+    setFormDisabled(false)
+    alert("backend still not online, please try again in 10 seconds")
+  }
 }
 
 
