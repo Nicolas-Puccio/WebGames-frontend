@@ -12,7 +12,7 @@
   <br><br>
   <a href="/WebGames-frontend/thronecoop/0.02/index.html">0.02, Sunday, July 7</a>
   <br><br>
-  <a href="/WebGames-frontend/thronecoop/0.03/index.html">0.03, Sunday, July 14 (todo changelog)</a>
+  <a href="/WebGames-frontend/thronecoop/0.03/index.html">0.03, Sunday, July 14</a>
   <br><br>
   <!-- Add more versions as needed -->
 
@@ -23,14 +23,13 @@
   <h4>Enemy AI</h4>
   <ul>
     <li>Spawns with town center as a target.</li>
-    <li>Will follow player if they enter trigger.</li>
-    <li>Follows town center again if player is far away.</li>
+    <li>Follows player if it is nearby</li>
+    <li>Targets town center again if player is far away.</li>
   </ul>
 
   <h4>Buildings</h4>
   <ul>
-    <li>Have a level and arrays for the town center level requirement and the upgrade cost.</li>
-    <li>Trigger collision to detect player nearby.</li>
+    <li>Can be upgraded, but provides no benefit.</li>
   </ul>
 
   <h4>Game Manager</h4>
@@ -41,8 +40,7 @@
   <h4>Player Script</h4>
   <ul>
     <li>WASD movement.</li>
-    <li>Space interacts with building.</li>
-    <li>Holds coins and displays them on UI.</li>
+    <li>Space interacts with buildings.</li>
   </ul>
 
   <h4>Wave Manager</h4>
@@ -54,14 +52,13 @@
   <h4>Map</h4>
   <ul>
     <li>Bigger map plane.</li>
-    <li>Add more buildings.</li>
+    <li>Added more buildings.</li>
   </ul>
 
   <h4>Buildings</h4>
   <ul>
-    <li>Keep a list of nearby enemies.</li>
-    <li>Shoot at the first enemy to enter range.</li>
-    <li>Buildings can be discovered after building another one.</li>
+    <li>Shoots at the first enemy to enter range.</li>
+    <li>New buildings can be discovered after constructing another one.</li>
   </ul>
 
   <h4>Arrows</h4>
@@ -71,12 +68,29 @@
 
   <h4>Town Center</h4>
   <ul>
-    <li>Shoots Arrows.</li>
+    <li>Shoots arrows.</li>
   </ul>
 
   <h4>Towers</h4>
   <ul>
     <li>Added towers that can shoot.</li>
+  </ul>
+
+  <h3>Sunday, July 14</h3>
+  <h4>Buildings</h4>
+  <ul>
+    <li>Fixed buildings could be upgraded even at max level.</li>
+    <li>Buildings have health.</li>
+  </ul>
+
+  <h4>Player Script</h4>
+  <ul>
+    <li>Shoots arrows.</li>
+  </ul>
+
+  <h4>Health</h4>
+  <ul>
+    <li>Added health bars on top of units and buildings.</li>
   </ul>
 </body>
 
