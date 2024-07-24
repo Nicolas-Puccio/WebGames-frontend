@@ -1,47 +1,17 @@
 # Testing
 https://nicolas-puccio.github.io/WebGames-frontend/
 
+# Networking
+All projects use WebSockets
+The main server is written in plain JS and runs on a free Node hosting website (render.com)
+Server takes a couple of seconds to turn on as it is a free hosting that only runs when active
 
-# Thronecoop changelog
+# Mice Men
+Remake of [Mice Men](https://archive.org/details/MiceMen_1020) but multiplayer online
 
-## Sunday, June 30
+# Zombie Shooter
+Basic topdown wave shooter
+Players FOV is shared, zombies are only displayed when in their FOV
 
-### Enemy AI
-- Spawns with town center as a target.
-- Will follow player if they enter trigger.
-- Follows town center again if player is far away.
-
-### Buildings
-- Have a level and arrays for the town center level requirement and the upgrade cost.
-- Trigger collision to detect player nearby.
-
-### Game Manager
-- Key to restart level.
-
-### Player Script
-- WASD movement.
-- Space interacts with building.
-- Holds coins and displays them on UI.
-
-### Wave Manager
-- Infinitely spawns enemies at a hardcoded position every X seconds.
-
-## Sunday, July 7
-
-### Map
-- Bigger map plane.
-- Add more buildings
-
-### Buildings
-- Keep a list of nearby enemies.
-- Shoot at the first enemy to enter range.
-- Buildings can be discovered after building another one.
-
-### Arrows
-- Arrow behavior (somewhat broken).
-
-### Town Center
-- Shoots Arrows.
-
-### Towers
-- Added towers that can shoot.
+# Thronecoop
+Currently just trying to follow the basic idea of the game, eventually plan to add multiplayer
