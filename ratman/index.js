@@ -54,7 +54,7 @@ const name_validation = _playerName => {
     playerName = _playerName
     document.getElementById('nameSelection').remove()
 
-    ws.send(JSON.stringify({ type: 'room_join', game: 'rats' }))
+    ws.send(JSON.stringify({ type: 'room_join', game: 'rats', platform: '2d' }))
     document.getElementById('waiting').innerHTML = 'waiting for another player'
   }
   else {
