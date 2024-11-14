@@ -8,7 +8,7 @@ const nameSelection = () => {
   const playerName = document.getElementById("playerName").value
   setFormDisabled(true)
   try {
-    ws.send(JSON.stringify({ type: 'name_selection', playerName }))
+    ws.send(JSON.stringify({ type: 'name_selection', playerName , platform: '2d'}))
   } catch (error) {
     setFormDisabled(false)
     alert("backend still not online, please try again in 10 seconds")
@@ -54,7 +54,7 @@ const name_validation = _playerName => {
     playerName = _playerName
     document.getElementById('nameSelection').remove()
 
-    ws.send(JSON.stringify({ type: 'room_join', game: 'rats', platform: '2d' }))
+    ws.send(JSON.stringify({ type: 'room_join', game: 'rats' }))
     document.getElementById('waiting').innerHTML = 'waiting for another player'
   }
   else {
