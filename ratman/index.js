@@ -1,5 +1,5 @@
 ws = new WebSocket('wss://webgamesuswest.onrender.com')
-//ws = new WebSocket('ws://localhost:3001')
+//ws = new WebSocket('ws://localhost:8080')
 
 //#region Setup
 
@@ -12,6 +12,7 @@ const nameSelection = () => {
   } catch (error) {
     setFormDisabled(false)
     alert("backend still not online, please try again in 10 seconds")
+    console.log(error)
   }
 }
 
